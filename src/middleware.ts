@@ -2,11 +2,10 @@ import { type NextRequest } from 'next/server';
 import { withAuth } from 'next-auth/middleware';
 import createIntlMiddleware from 'next-intl/middleware';
 
-import { locales } from './navigation';
+import { locales } from './i18n';
 
 const publicPages = [
   '/auth',
-  '/',
   // (/secret requires auth)
 ];
 
@@ -16,9 +15,10 @@ const intlMiddleware = createIntlMiddleware({
 });
 
 const authMiddleware = withAuth(
-  // Note that this callback is only invoked if
-  // the `authorized` callback has returned `true`
-  // and not for pages listed in `pages`.
+  /* Note that this callback is only invoked if
+   * the `authorized` callback has returned `true`
+   * and not for pages listed in `pages`.
+   */
   req => intlMiddleware(req),
   {
     callbacks: {
