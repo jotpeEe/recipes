@@ -1,14 +1,6 @@
-import { integer, pgTable, primaryKey, text, timestamp } from 'drizzle-orm/pg-core';
+import { integer, pgTable, primaryKey, text } from 'drizzle-orm/pg-core';
 
-export const users = pgTable('user', {
-  id: text('id')
-    .primaryKey()
-    .$defaultFn(() => crypto.randomUUID()),
-  name: text('name'),
-  email: text('email').notNull(),
-  emailVerified: timestamp('emailVerified', { mode: 'date' }),
-  image: text('image'),
-});
+import { users } from './users';
 
 export const accounts = pgTable(
   'account',

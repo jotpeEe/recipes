@@ -1,0 +1,1 @@
+ALTER TABLE "recipe" RENAME COLUMN "name" TO "title";
