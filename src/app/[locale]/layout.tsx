@@ -15,8 +15,8 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: 'Shopcart',
-  description: 'E-commerce example',
+  title: 'Recipes',
+  description: 'Web app for storing recipes',
 };
 
 type RootLayoutProps = {
