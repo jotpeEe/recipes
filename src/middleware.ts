@@ -6,6 +6,8 @@ import { locales } from './i18n';
 
 const publicPages = [
   '/auth',
+  '/groceries',
+  '/',
   // (/secret requires auth)
 ];
 
